@@ -27,6 +27,7 @@
     // Rectangle-Shapes für jedes Element im Dataset zu SVG hinzufügen
     svg.selectAll("rect")
        .data(dataset)
+       // Alle Methoden nach Data werden pro Datenelement durchlaufen
        .enter()
        .append("rect")
        .attr("x", (d, i) => i * 30)
