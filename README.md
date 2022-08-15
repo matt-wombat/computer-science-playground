@@ -1,4 +1,5 @@
-# js-playground
-JavaScript Playground for my small helper tools and other experiments 
+# developers-playground
 
-Server for testing: https://js-playground.otremba.net
+This repository represents a playground for developing small programs in JavaScript, Node.js and Python and other experiments.
+
+Server for testing: https://devpg.otremba.net
