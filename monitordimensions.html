@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <script src="monitordimensions.js"></script>
+    </head>
+
+<body>
+<form name="eingabeformular">
+    Diagonale in Zoll: 
+    <input type="text" name="diagonale" value="32" size="3"><br>
+    Verhältnis Breite/Höhe: 
+    <input type="text" name="widthrat" value="16" size="3">:
+    <input type="text" name="heightrat" value="9" size="3"><br>
+    <button type="button" 
+        onclick="printresults(
+            document.eingabeformular.diagonale.value,
+            document.eingabeformular.widthrat.value,
+            document.eingabeformular.heightrat.value)">
+        Calculate
+    </button>
+</form>
+
+<div class="ergebnisse"></div>
+</body>
+</html>
