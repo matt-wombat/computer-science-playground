@@ -99,7 +99,7 @@ while True:
     print('Q. Quit')
     print('-------------------')
 
-    specified_inputs = '1-7 or q'
+    specified_inputs = '1-8 or Q'
 
     input1 = input(f'Please select ({specified_inputs}) ')
 
