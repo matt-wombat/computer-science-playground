@@ -16,21 +16,67 @@ def get_age():
 
     print(f'Your age was converted to and saved in a variable of data type {type(age_int)}.')
 
+def how_are():
+    how_are_you = input('How are you? ')
+    if how_are_you == 'Bad':
+        print("I'm sorry to hear that.")
+    else:
+        response = '{} sounds fine!'
+        print(response.format(how_are_you))
+
+def bool_test():
+    truthy = bool('Hello world')  # Always true unless empty, 0, none or false
+    print('This variable is',truthy)
+
+def loop_with_list():
+    world_championships = [1954, 1974, 1990, 2014]
+    print('Germany became football world champion in:')
+    for year in world_championships:
+        print(year)
+
+def loop_with_range():
+    for i in range(5):
+        print(i)    
+
 def factorial(num):
     if num == 1:
         return 1
     else:
         return num * factorial(num - 1)
 
-def recursion():
-    num_str = input('Calculate factorial for which number? ')
+def input_number():
+    num_str = input('Input positive number: ')
     try:
         num_int = int(num_str)
+        if num_int <= 0:
+            return -1
+        else:
+            return num_int
     except:
         print(f'{num_str} is not a number.')
+        return -1
+
+def recursion1():
+    num_int = input_number()
+    if num_int == -1:
+        print('Wrong input.')
+        return
+    else:
+        print(factorial(num_int))
+
+def fibonacci(num):
+    if num <= 1:
+        return num
+    else:
+        return fibonacci(num-1) + fibonacci(num-2)
+
+def recursion2():
+    num_int = input_number()
+    if num_int == -1:
+        print('Wrong input.')
         return
 
-    print(factorial(num_int))
+    print(fibonacci(num_int))
 
 
 print('Hello World!')
@@ -47,12 +93,23 @@ while True:
     print('4. Bool test')
     print('5. For loop over list')
     print('6. For loop with range')
-    print('7. Recursion')
+    print('7. Recursion 1 - Factorial')
+    print('8. Recursion 2 - Fibonacci')
+    print('--')
+    print('Q. Quit')
     print('-------------------')
 
+    specified_inputs = '1-7 or q'
+
+    input1 = input(f'Please select ({specified_inputs}) ')
+
+    if input1.lower() == 'q':
+        break
+
     try:
-        selection = int(input('Please select (1-7) '))
+        selection = int(input1)
     except:
+        print('Only following inputs allowed:',specified_inputs)
         break
 
     if selection == 1:
@@ -62,30 +119,22 @@ while True:
         get_age()
     
     elif selection == 3:
-        how_are_you = input('How are you? ')
-        if how_are_you == 'Bad':
-            print("I'm sorry to hear that.")
-        else:
-            response = '{} sounds fine!'
-            print(response.format(how_are_you))
+        how_are()
 
     elif selection == 4:
-        truthy = bool('Hello world')  # Always true unless empty, 0, none or false
-        print('This variable is',truthy)
+        bool_test()
 
     elif selection == 5:
-        world_championships = [1954, 1974, 1990, 2014]
-        print('Germany became football world champion in:')
-        for year in world_championships:
-            print(year)
+        loop_with_list()
 
     elif selection == 6:
-        for i in range(5):
-            print(i)
+        loop_with_range()
 
     elif selection == 7:
-        recursion()
+        recursion1()
 
+    elif selection == 8:
+        recursion2()
 
     print()
     user_input = input('One more time? (Yes or Y) ')
@@ -98,10 +147,5 @@ while True:
         pass  
     else:
         break
-
-
-
-
-
 
 
