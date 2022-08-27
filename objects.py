@@ -9,7 +9,8 @@ class Book(Medium):
         self.__author = author        # Private, therefore not inheritable
         self.__subtitle = subtitle    # Private, therefore not inheritable
         self.__pagecount = pagecount  # Private, therefore not inheritable
-
+        self.__book_no = Book.book_no
+        Book.book_no += 1
         Medium.__init__(self,title,publication_year)
 
     
@@ -17,12 +18,15 @@ class Book(Medium):
         print(f'The book instance "{self._title}" was successfully deleted.')
     
     def book_info(self):
+        print('Book No.:', self.__book_no)
         print('Title:', self._title)
         if self.__subtitle != '':
             print('Subtitle:', self.__subtitle)
         print('Author:', self.__author)
         print('Publication:', self._year)
         print('Pages:', self.__pagecount)
+    
+    book_no = 1
 
 
     
