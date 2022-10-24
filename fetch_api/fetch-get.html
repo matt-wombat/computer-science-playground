@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch from API</title>
+  <script src="fetch-get.js" defer></script>
+</head>
+<body>
+  Search Query: <input type="text" id="inputField" value=""><br>
+
+  <p>What type of search?:</p>
+  <form>
+    <input type="radio" id="sl" name="query_type" checked>
+    <label for="sl">Sounds like</label><br>
+    <input type="radio" id="sp" name="query_type">
+    <label for="sp">Spelled similar</label><br>
+    <input type="radio" id="rel_rhy" name="query_type">
+    <label for="sp">Rhyme with</label><br><br>
+  </form>
+
+  <p>Use Promise or Async-Await?:</p>
+  <form>
+    <input type="radio" id="promise" name="async_type" checked>
+    <label for="promise">Promise</label><br>
+    <input type="radio" id="asyncawait" name="async_type">
+    <label for="asyncawait">Async-Await</label><br><br>
+  </form>
+
+  <button id="fetchButton">Fetch from API</button><br>
+  <div id="resultDiv"></div>
+</body>
+</html>
