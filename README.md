@@ -7,4 +7,3 @@ Used programming languages:
 * JavaScript, Node.js
 * Python 
 
-Server for testing: https://devpg.otremba.net
