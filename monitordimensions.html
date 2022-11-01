@@ -13,28 +13,39 @@
 </head>
 
 <body>
-<form name="eingabeformular">
+<div class="container">
+  <header class="mb-3">
+    <span class="fs-4">Monitor Dimensions Calculator</span>
+  </header>
+
+
+  <form name="eingabeformular">
+    <div class="mb-3">
+      <label for="diagonal" class="form-label">Diagonale in Zoll</label>
+      <input id="diagonal" type="text" name="diagonale" class="form-control" value="32" size="3">
+    </div>
+
+    <label for="width" class="form-label">Verhältnis Breite / Höhe</label>
+    <div class="input-group mb-3">
+      <input id="width" type="text" name="widthrat" class="form-control" value="16">
+      <span class="input-group-text">:</span>
+      <input type="text" name="heightrat" class="form-control" value="9">
+    </div>
+
+    <button type="button" class="btn btn-primary" 
+      onclick="printresults(
+        document.eingabeformular.diagonale.value,
+        document.eingabeformular.widthrat.value,
+        document.eingabeformular.heightrat.value)">
+      Calculate
+    </button>
+  </form>
+
   <div class="mb-3">
-    <label for="diagonal" class="form-label">Diagonale in Zoll</label>
-    <input id="diagonal" type="text" name="diagonale" class="form-control" value="32" size="3">
+    <div class="ergebnisse"></div>
   </div>
 
-  <label for="width" class="form-label">Verhältnis Breite / Höhe</label>
-  <div class="input-group mb-3">
-    <input id="width" type="text" name="widthrat" class="form-control" placeholder="16">
-    <span class="input-group-text">:</span>
-    <input type="text" name="heightrat" class="form-control" placeholder="9">
-  </div>
+</div>
 
-  <button type="button" class="btn btn-primary" 
-    onclick="printresults(
-      document.eingabeformular.diagonale.value,
-      document.eingabeformular.widthrat.value,
-      document.eingabeformular.heightrat.value)">
-    Calculate
-  </button>
-</form>
-
-<div class="ergebnisse"></div>
 </body>
 </html>
