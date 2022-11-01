@@ -23,14 +23,24 @@ const shoppingCartArr = [
   },
   {
     name: 'Mouse',
-    quantity: 2
+    quantity: 1
+  },
+  {
+    name: 'Webcam',
+    quantity: 1
+  },
+  {
+    name: 'Monitor',
+    quantity: 1
   }
 ];
 
 
-loginUser('Alice')
+loginUser('Mallory')
 .then((authToken) => processCart([authToken, shoppingCartArr]) )
-.then((resolveValArray) => checkOut(resolveValArray))
-.catch((rejectReason) => { console.log(rejectReason) })
+.then((resolveValArray) => {
+  console.log(`Cart processed successfully. Total order amount: ${resolveValArray[1]}`);
+  return checkOut(resolveValArray);
+})
 .then((resolvedMessage) => { console.log(resolvedMessage) })
-.catch((rejectReason) => { console.log(rejectReason) });
+.catch((errorMessage) => { console.log(errorMessage) });
