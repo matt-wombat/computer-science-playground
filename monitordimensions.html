@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-        <script src="monitordimensions.js"></script>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="monitordimensions.js"></script>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
+</head>
 
 <body>
 <form name="eingabeformular">
-    Diagonale in Zoll: 
-    <input type="text" name="diagonale" value="32" size="3"><br>
-    Verhältnis Breite/Höhe: 
-    <input type="text" name="widthrat" value="16" size="3">:
-    <input type="text" name="heightrat" value="9" size="3"><br>
-    <button type="button" 
-        onclick="printresults(
-            document.eingabeformular.diagonale.value,
-            document.eingabeformular.widthrat.value,
-            document.eingabeformular.heightrat.value)">
-        Calculate
-    </button>
+  <div class="mb-3">
+    <label for="diagonal" class="form-label">Diagonale in Zoll</label>
+    <input id="diagonal" type="text" name="diagonale" class="form-control" value="32" size="3">
+  </div>
+
+  <label for="width" class="form-label">Verhältnis Breite / Höhe</label>
+  <div class="input-group mb-3">
+    <input id="width" type="text" name="widthrat" class="form-control" placeholder="16">
+    <span class="input-group-text">:</span>
+    <input type="text" name="heightrat" class="form-control" placeholder="9">
+  </div>
+
+  <button type="button" class="btn btn-primary" 
+    onclick="printresults(
+      document.eingabeformular.diagonale.value,
+      document.eingabeformular.widthrat.value,
+      document.eingabeformular.heightrat.value)">
+    Calculate
+  </button>
 </form>
 
 <div class="ergebnisse"></div>
