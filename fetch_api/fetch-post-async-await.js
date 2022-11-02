@@ -1,4 +1,12 @@
-import { apiKey } from './api-keys.js';
+/*
+Create file: ./apikeys.js
+Content:
+
+const apiKey = '';  // Insert your API key here
+export { apiKey };
+*/
+
+import { apiKey } from './apikeys.js';
 
 const url = 'https://api.rebrandly.com/v1/links';
 

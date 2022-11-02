@@ -2,3 +2,5 @@
 .git
 *.pyc
 temp.txt
+fetch_api/apikeys.js
+Mandatory-Savings-Calc.xlsx
