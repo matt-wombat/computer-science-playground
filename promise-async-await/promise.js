@@ -35,9 +35,13 @@ const shoppingCartArr = [
   }
 ];
 
+const userName = 'Mallory';
 
-loginUser('Mallory')
-.then((authToken) => processCart([authToken, shoppingCartArr]) )
+loginUser(userName)
+.then((authToken) => {
+  console.log(`User ${userName} authenticated successfully.`);
+  return processCart([authToken, shoppingCartArr]);
+})
 .then((resolveValArray) => {
   console.log(`Cart processed successfully. Total order amount: ${resolveValArray[1]}`);
   return checkOut(resolveValArray);

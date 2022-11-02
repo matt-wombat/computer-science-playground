@@ -52,7 +52,7 @@ const loginUser = (userId) => {
     setTimeout(() => {
       const userDbIndex = userDb.findIndex((element) => element.name == userId);      
       if (userDbIndex >= 0) {
-        console.log(`User ${userId} authenticated successfully.`);
+        // console.log(`User ${userId} authenticated successfully.`);
         userDb[userDbIndex].authToken = Math.floor(Math.random() * 1000000000).toString();
         resolve(userDb[userDbIndex].authToken);
       } else {

@@ -44,13 +44,14 @@ const shoppingCartArr = [
 
 const processOrder = async (userName) => {
   try {
-    let firstResolveVal = await loginUser(userName);
-    let secondResolveVal = await processCart([firstResolveVal, shoppingCartArr]);
-    console.log(`Cart processed successfully. Total order amount: ${secondResolveVal[1]}`);
+    let authToken = await loginUser(userName);
+    console.log(`User ${userName} authenticated successfully.`);
 
-    let thirdResolveVal = await checkOut(secondResolveVal);
+    let cartResolvedArr = await processCart([authToken, shoppingCartArr]);
+    console.log(`Cart processed successfully. Total order amount: ${cartResolvedArr[1]}`);
 
-    console.log(thirdResolveVal);
+    let checkoutMessage = await checkOut(cartResolvedArr);
+    console.log(checkoutMessage);
 
   } catch(error) {
     console.log(error);
@@ -59,3 +60,4 @@ const processOrder = async (userName) => {
 };
 
 processOrder('Mallory');
+
