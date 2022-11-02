@@ -2,5 +2,6 @@
 .git
 *.pyc
 temp.txt
-fetch_api/apikeys.js
+fetch_api/apikey.js
 Mandatory-Savings-Calc.xlsx
+filmfinder/apikey.js
