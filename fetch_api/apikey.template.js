@@ -1,2 +1,3 @@
-const apiKey = '';  // Insert your API key here
+// Copy file to apikey.js and insert API key below
+const apiKey = '';
 export { apiKey };
