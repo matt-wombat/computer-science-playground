@@ -14,17 +14,19 @@ class Node:
 
 class LinkedList:
     def __init__(self, value=None):
+        print(f'Create list with: {value}')
         self.head_node = Node(value)
   
     def get_head_node(self):
         return self.head_node
   
     def insert_first(self, new_value):
+        print(f'Insert first: {new_value}')
         new_node = Node(new_value)
         new_node.set_next_node(self.head_node)
         self.head_node = new_node
-        
-    def stringify(self):
+    
+    def print(self):
         string = ""
         current_node = self.get_head_node()
         while current_node:
@@ -33,7 +35,7 @@ class LinkedList:
                     string += " -> "
                 string += str(current_node.get_value())
             current_node = current_node.get_next_node()
-        return string
+        print("Linked list: ", string)
     
     def remove_node(self, value_to_remove):
         current_node = self.get_head_node()
@@ -49,12 +51,21 @@ class LinkedList:
                 else:
                     current_node = next_node
 
+    def swap_nodes(self, val1, val2):
+        pass
 
 
-ll = LinkedList(10)
+# Todos:
+# Remove Head Node
+# Remove all Nodes of a kind
+# Swap two nodes
+
+
+
+ll = LinkedList()
+ll.insert_first(10)
 ll.insert_first(20)
 ll.insert_first(35)
 ll.insert_first(55)
 ll.insert_first(71)
-
-print(ll.stringify())
+ll.print()
