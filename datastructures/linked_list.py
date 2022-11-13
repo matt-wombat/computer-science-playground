@@ -131,10 +131,21 @@ class LinkedList:
         node1.set_next_node(node2.get_next_node())
         node2.set_next_node(node1_next_temp)
 
+    def nth_to_last(self, nth):
+        tail = self.get_head_node()
+        nth_to_last_node = self.get_head_node()
+        counter = 1
+
+        while tail.get_next_node():
+            tail = tail.get_next_node()
+            if counter >= nth + 1:
+                nth_to_last_node = nth_to_last_node.get_next_node()
+            counter += 1
+
+        print(f"{nth} to last node: {nth_to_last_node.get_value()}")
 
 
 # Todos:
-# Two Pointers (nth to last)
 # Two Pointers (Find the middle left-weighted and right-weighted)
 
 
@@ -168,5 +179,6 @@ ll.remove_node(10, True)
 ll.print()
 ll.remove_node(10)
 ll.print()
+ll.nth_to_last(3)
 
 
