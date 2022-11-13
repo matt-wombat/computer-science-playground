@@ -132,17 +132,36 @@ class LinkedList:
         node2.set_next_node(node1_next_temp)
 
     def nth_to_last(self, nth):
-        tail = self.get_head_node()
+        tail_node = self.get_head_node()
         nth_to_last_node = self.get_head_node()
         counter = 1
 
-        while tail.get_next_node():
-            tail = tail.get_next_node()
+        while tail_node.get_next_node():
+            tail_node = tail_node.get_next_node()
             if counter >= nth + 1:
                 nth_to_last_node = nth_to_last_node.get_next_node()
             counter += 1
 
         print(f"{nth} to last node: {nth_to_last_node.get_value()}")
+    
+    def find_middle(self, weighted="left"):
+        tail_node = self.get_head_node()
+        middle_node = self.get_head_node()
+
+        while tail_node:
+            tail_node = tail_node.get_next_node()
+            if weighted == "left":
+                middle_node = middle_node.get_next_node()
+            if tail_node:
+                tail_node = tail_node.get_next_node()
+                if weighted == "right":
+                    middle_node = middle_node.get_next_node()
+            #if weighted == "right":
+            #if weighted == "left":
+            #    middle_node = middle_node.get_next_node()
+
+        print(f"Middle node {weighted} weighted: {middle_node.get_value()}")
+
 
 
 # Todos:
@@ -173,10 +192,13 @@ ll.swap_first_nodes(20, 11)
 ll.print()
 ll.swap_first_nodes(20, 10)
 ll.print()
+ll.find_middle()
 ll.remove_node(10)
 ll.print()
+ll.find_middle()
 ll.remove_node(10, True)
 ll.print()
+ll.find_middle()
 ll.remove_node(10)
 ll.print()
 ll.nth_to_last(3)
