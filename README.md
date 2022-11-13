@@ -1,14 +1,12 @@
-# Data structures and algorithms with JavaScript
+# Data Structures and Algorithms with Python or JavaScript
 
-This repository contains JavaScript implementations of popular data structures, algorithms and problem solutions.
-# developers-playground
+This repository contains my implementations of popular 
 
-This repository represents a playground for developing small programs and other experiments.
+* Data structures
+* Algorithms 
+* Problems
 
 Used programming languages:
 
-* JavaScript, Node.js
 * Python 
-
-
-It is meant like kind of a personal playground.
+* JavaScript / Node.js
