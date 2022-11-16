@@ -136,33 +136,49 @@ class LinkedList:
             print(f"Invalid value {nth} for nth: Must be integer of 1 or greater")
         
         tail_node = self.get_head_node()
+        tail_counter = 1
         nth_to_last_node = self.get_head_node()
-        counter = 1
 
         while tail_node.get_next_node():
             tail_node = tail_node.get_next_node()
-            if counter >= nth + 1:
+            if tail_counter >= nth + 1:
                 nth_to_last_node = nth_to_last_node.get_next_node()
-            counter += 1
+            tail_counter += 1
 
         print(f"{nth} to last node: {nth_to_last_node.get_value()}")
     
-    def find_middle(self, weighted="left"):
+    def find_middle(self, weighted="right"):
         tail_node = self.get_head_node()
+        tail_counter = 1
         middle_node = self.get_head_node()
-        counter = 1
+        #middle_node = None
 
+        # while tail_node:
+        #     tail_node = tail_node.get_next_node()
+        #     if weighted == "left":
+        #         middle_node = middle_node.get_next_node()
+        #     if tail_node:
+        #         tail_node = tail_node.get_next_node()
+        #         if weighted == "right":
+        #             middle_node = middle_node.get_next_node()
+        #     #if weighted == "right":
+        #     #if weighted == "left":
+        #     #    middle_node = middle_node.get_next_node()
+
+        
         while tail_node.get_next_node():
             tail_node = tail_node.get_next_node()
-            if weighted == "left":
+            if (tail_counter % 2) == 0:
+                # if middle_node == None:
+                #     middle_node = self.get_head_node()
+                # else:
                 middle_node = middle_node.get_next_node()
-            if tail_node:
-                tail_node = tail_node.get_next_node()
-                if weighted == "right":
-                    middle_node = middle_node.get_next_node()
             #if weighted == "right":
             #if weighted == "left":
             #    middle_node = middle_node.get_next_node()
+            tail_counter += 1
+
+        
 
         print(f"Middle node {weighted} weighted: {middle_node.get_value()}")
 
@@ -175,10 +191,12 @@ class LinkedList:
 ll = LinkedList()
 ll.insert_first(11)
 ll.insert_first(20)
-ll.insert_first(10)
+ll.insert_first(13)
 ll.insert_first(35)
-ll.insert_first(10)
+ll.insert_first(12)
 ll.insert_first(55)
+ll.insert_first(10)
+ll.insert_first(10)
 ll.insert_first(10)
 ll.insert_first(71)
 ll.print()
@@ -196,14 +214,14 @@ ll.print()
 # ll.print()
 # ll.swap_first_nodes(20, 10)
 # ll.print()
-ll.nth_to_last(1)
-ll.nth_to_last(2.5)
-ll.nth_to_last(3)
-ll.nth_to_last(4)
-# ll.find_middle()
-# ll.remove_node(10)
-# ll.print()
-# ll.find_middle()
+# ll.nth_to_last(1)
+# ll.nth_to_last(2.5)
+# ll.nth_to_last(3)
+# ll.nth_to_last(4)
+ll.find_middle()
+ll.remove_node(10)
+ll.print()
+ll.find_middle()
 # ll.remove_node(10, True)
 # ll.print()
 # ll.find_middle()
