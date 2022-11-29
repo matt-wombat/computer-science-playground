@@ -30,6 +30,24 @@ class LinkedList:
         new_node.set_next_node(self.head_node)
         self.head_node = new_node
     
+    def insert_last(self, new_value):
+        print(f'Insert last: {new_value}')
+
+        new_node = Node(new_value)
+        tail_node = self.get_head_node()
+        prev_node = None
+
+        if tail_node.get_value() == None:
+            self.head_node = new_node
+        else:
+            while tail_node:
+                prev_node = tail_node
+                tail_node = tail_node.get_next_node()
+        
+        if prev_node:
+            prev_node.set_next_node(new_node)
+
+    
     def print(self):
         string = "<head> "
         current_node = self.get_head_node()
@@ -147,45 +165,32 @@ class LinkedList:
 
         print(f"{nth} to last node: {nth_to_last_node.get_value()}")
     
-    def find_middle(self, weighted="right"):
+    def find_middle(self):
         tail_node = self.get_head_node()
-        tail_counter = 1
         middle_node = self.get_head_node()
-        #middle_node = None
-
-        # while tail_node:
-        #     tail_node = tail_node.get_next_node()
-        #     if weighted == "left":
-        #         middle_node = middle_node.get_next_node()
-        #     if tail_node:
-        #         tail_node = tail_node.get_next_node()
-        #         if weighted == "right":
-        #             middle_node = middle_node.get_next_node()
-        #     #if weighted == "right":
-        #     #if weighted == "left":
-        #     #    middle_node = middle_node.get_next_node()
-
         
-        while tail_node.get_next_node():
+        while tail_node:
             tail_node = tail_node.get_next_node()
-            if (tail_counter % 2) == 0:
-                # if middle_node == None:
-                #     middle_node = self.get_head_node()
-                # else:
-                middle_node = middle_node.get_next_node()
-            #if weighted == "right":
-            #if weighted == "left":
-            #    middle_node = middle_node.get_next_node()
-            tail_counter += 1
+            if tail_node:
+                tail_node = tail_node.get_next_node()
+                if tail_node:
+                    middle_node = middle_node.get_next_node()
 
+        print(f"Middle node: {middle_node.get_value()}")   
+
+    def find_half_speed(self):
+        tail_node = self.get_head_node()
+        middle_node = self.get_head_node()
+        counter = 1
         
+        while tail_node:
+            tail_node = tail_node.get_next_node()
+            if tail_node:
+                if counter % 2 == 0:
+                    middle_node = middle_node.get_next_node()
+            counter += 1
 
-        print(f"Middle node {weighted} weighted: {middle_node.get_value()}")
-
-
-
-# Todos:
-# Two Pointers (Find the middle left-weighted and right-weighted)
+        print(f"Middle node: {middle_node.get_value()}")   
 
 
 ll = LinkedList()
@@ -200,33 +205,60 @@ ll.insert_first(10)
 ll.insert_first(10)
 ll.insert_first(71)
 ll.print()
-# ll.remove_head()
-# ll.print()
-# ll.swap_first_nodes(55, 55)
-# ll.swap_first_nodes(81, 63)
-# ll.swap_first_nodes(35, 20)
-# ll.print()
-# ll.swap_first_nodes(10, 55)
-# ll.print()
-# ll.swap_first_nodes(20, 55)
-# ll.print()
-# ll.swap_first_nodes(20, 11)
-# ll.print()
-# ll.swap_first_nodes(20, 10)
-# ll.print()
-# ll.nth_to_last(1)
-# ll.nth_to_last(2.5)
-# ll.nth_to_last(3)
-# ll.nth_to_last(4)
+ll.remove_head()
+ll.print()
+ll.swap_first_nodes(55, 55)
+ll.swap_first_nodes(81, 63)
+ll.swap_first_nodes(35, 20)
+ll.print()
+ll.swap_first_nodes(10, 55)
+ll.print()
+ll.swap_first_nodes(20, 55)
+ll.print()
+ll.swap_first_nodes(20, 11)
+ll.print()
+ll.swap_first_nodes(20, 10)
+ll.print()
+ll.nth_to_last(1)
+ll.nth_to_last(2.5)
+ll.nth_to_last(3)
+ll.nth_to_last(4)
+
+ll.remove_node(10)
+ll.print()
 ll.find_middle()
 ll.remove_node(10)
 ll.print()
 ll.find_middle()
-# ll.remove_node(10, True)
-# ll.print()
-# ll.find_middle()
-# ll.remove_node(10)
-# ll.print()
+ll.remove_node(10, True)
+ll.print()
+ll.find_middle()
+ll.remove_node(10)
+ll.print()
 
 
 
+
+ll = LinkedList()
+ll.insert_first(7)
+ll.insert_first(6)
+ll.insert_first(5)
+ll.insert_first(4)
+ll.insert_first(3)
+ll.insert_first(2)
+ll.insert_first(1)
+ll.print()
+ll.find_middle()
+ll.find_half_speed()
+
+ll.insert_last(8)
+ll.print()
+ll.find_middle()
+ll.find_half_speed()
+
+
+ll = LinkedList()
+ll.insert_last(7)
+ll.insert_last(6)
+ll.insert_last(5)
+ll.print()
