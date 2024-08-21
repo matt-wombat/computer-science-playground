@@ -11,7 +11,7 @@ export statements for similar (though not identical) functionality.
 */
 
 // Modules - Encapsulated Code (only share minimum)
-const names = require('./04-module-names')
+const names = require('./04-module-names') // load custom module with dot-prefix
 const sayHi = require('./05-module-functions')
 const data = require('./06-module-export-alternative')
 
