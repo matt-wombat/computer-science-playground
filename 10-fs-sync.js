@@ -7,5 +7,5 @@ const secondFile = readFileSync("./content/second.txt", "utf8");
 writeFileSync(
   "./content/result-sync.txt",
   `Here is the result: \n${firstFile}\n${secondFile}\n`,
-  { flag: 'a' }
+  { flag: 'a' }  // always append, if file exists
 );
