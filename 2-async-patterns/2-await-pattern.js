@@ -12,6 +12,18 @@ const getText = (path) => {
   });
 };
 
-getText(__dirname + '/../content/first.txt')
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err));
+const start = async () => {
+  try {
+    const first = await getText(__dirname + '/../content/first.txt');
+    const second = await getText(__dirname + '/../content/second.txt');
+    console.log(first, second);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start()
+
+// getText(__dirname + '/../content/first.txt')
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log(err));
