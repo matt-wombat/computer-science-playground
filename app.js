@@ -10,5 +10,6 @@ How to run
 // require('./1-event-loop-examples/3-setInterval')
 // require('./1-event-loop-examples/4-server')
 
+require('./2-async-patterns/1-block')
 
 
