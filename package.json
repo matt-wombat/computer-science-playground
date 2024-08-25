@@ -4,14 +4,9 @@
   "description": "This is my repository following the freeCodeCamp.org Node.js and Express.js Course",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.4"
-  }
+  "license": "ISC"
 }
