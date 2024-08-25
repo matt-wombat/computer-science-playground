@@ -9,9 +9,7 @@ const server = http.createServer((req, res) => {
     res.end(`<h1>Oops! - 404 Error</h1>
       <p>We can't seem to find the page you are looking for</a>
       <a href="/">Back to home page</a>`);
-    
   }
-
 });
 
 server.listen(5000);
