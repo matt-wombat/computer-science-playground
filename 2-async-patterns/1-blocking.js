@@ -1,3 +1,6 @@
+// Implementation without promises and asynchronous capabilities
+// meaning the code will be blocking.
+
 const http = require('http');
 
 const server = http.createServer((req, res) => {
