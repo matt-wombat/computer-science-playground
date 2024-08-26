@@ -1,8 +1,15 @@
 # node-express-course
 
-This is my repository following the freeCodeCamp.org Node.js and Express.js Course
+This is my repository following the freeCodeCamp.org Node.js and Express.js YouTube Course at https://www.youtube.com/watch?v=Oe421EPjeBE
 
-# Running and Restarting Automatically
+# Contents
+
+This repository contains two parts in the subfolders:
+
+* 1-node-tutorial - Node Basics Tutorial
+* 2-express-tutorial - Building a Express application
+
+# 1-node-tutorial Running and Restarting Automatically
 
 ## With Nodemon (Preferred Method)
 
