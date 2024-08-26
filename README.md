@@ -6,27 +6,18 @@ This is my repository following the freeCodeCamp.org Node.js and Express.js YouT
 
 This repository contains two parts in the subfolders:
 
-* 1-node-tutorial - Node Basics Tutorial
-* 2-express-tutorial - Building a Express application
+* 1-node-tutorial - Node.js Basics
+* 2-express-tutorial - Express Basics
 
-# 1-node-tutorial Running and Restarting Automatically
+# Prerequisites
 
-## With Nodemon (Preferred Method)
-
-Use nodemon package, which is needs to be installed globally first:
+Nodemon package needs to be installed globally:
 
 `npm i -g nodemon`
 
-After that start the app:
+# Running and Restarting Automatically
+
+Go to either of the subfolders and run:
 
 `npm start`
-
-## With entr
-
-Use linux program entr to restart after a change of specified files. It needs to be installed first:
-
-`sudo apt-get install entr`
-
-For executing for example `node app.js` automatically after file change use:
-`ls *.js | entr -cr node app.js`
 
