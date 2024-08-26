@@ -1,7 +1,7 @@
 {
-  "name": "express-course",
-  "version": "0.0.1",
-  "description": "This is my repository following the freeCodeCamp.org Node.js and Express.js Course",
+  "name": "node-tutorial",
+  "version": "1.0.0",
+  "description": "Node.js Basics Tutorial App",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
