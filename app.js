@@ -14,6 +14,9 @@ How to run
 // require('./2-async-patterns/2-promise-pattern-chained')
 // require('./2-async-patterns/3-promise-pattern-unchained-async-await')
 // require('./2-async-patterns/4-promisify-async-await-pattern')
-require('./2-async-patterns/5-promise-async-await-native-pattern')
+// require('./2-async-patterns/5-promise-async-await-native-pattern')
+
+require('./13-event-emitter')
+
 
 
