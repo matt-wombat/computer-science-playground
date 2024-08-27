@@ -5,10 +5,12 @@ const app = express();
 // Setup static and middleware
 app.use(express.static('./public'));
 
-app.get('/', (req, res) => {
-  console.log(req.method + ' ' + req.url);
-  res.sendFile(path.resolve(__dirname, './navbar-app/index.html'));
-});
+// app.get('/', (req, res) => {
+//   console.log(req.method + ' ' + req.url);
+//   res.sendFile(path.resolve(__dirname, './navbar-app/index.html'));
+//   index.html moved to static assets
+//   SSR / Server-side rendering 
+// });
 
 app.get('/about', (req, res) => {
   console.log(req.method + ' ' + req.url);
