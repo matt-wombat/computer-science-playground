@@ -1,4 +1,8 @@
 const http = require('http');
+const { readFileSync } = require('fs');
+
+// get all files
+const homePage = readFileSync('./index.html')
 
 const server = http.createServer((req, res) => {
   const url = req.url;
@@ -8,7 +12,7 @@ const server = http.createServer((req, res) => {
     // home page
     case url === '/':
       res.writeHead(200, { 'content-type': 'text/html' });
-      res.write('<h1>Home page</h1>');
+      res.write(homePage);
       res.end();
       break;
 
