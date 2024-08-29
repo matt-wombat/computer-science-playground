@@ -64,9 +64,9 @@ http://localhost:5000/static-page
 
 Authorization is required when accessing API URLs. API-Requests with user=john:
 
-http://localhost:5000/api/products?user=john
-http://localhost:5000/api/products/4?user=john
-http://localhost:5000/api/products/4/reviews/1?user=john
+http://localhost:5000/api/products
+http://localhost:5000/api/products/4
+http://localhost:5000/api/products/4/reviews/1
 http://localhost:5000/api/v1/query?search=a&limit=1&user=john
 http://localhost:5000/api/people
 
