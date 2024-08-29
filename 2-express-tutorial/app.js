@@ -27,16 +27,16 @@ app.use(express.urlencoded({ extended: false }));
 // above) the following enables access to JSON data in req.body
 app.use(express.json());
 
+// will be applied in every route:
+app.use(morgan('tiny'));
+// will be applied only in specific /api routes
+app.use('/api/v1', authorize);
+
 // Setup routing modules
 app.use('/api/people', people);
 app.use('/login', auth);
 app.use('/api/products', products);
 app.use('/api/v1', apiv1);
-
-// will be applied in every route:
-app.use(morgan('tiny'));
-// will be applied only in specific /api routes
-app.use('/api/v1', authorize);
 
 app.get('/', (req, res) => {
   res.send('<h1>Home Page</h1><p><a href="/api/products">Products</a></p>');
