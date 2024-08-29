@@ -80,3 +80,7 @@ Following APIs handle POST and PUT requests (use i.e. Postman):
 http://localhost:5000/api/people
 http://localhost:5000/api/postman/people
 http://localhost:5000/api/people/1
+
+Following APIs handle DELETE requests (use i.e. Postman):
+
+http://localhost:5000/api/people/1
