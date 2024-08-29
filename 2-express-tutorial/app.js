@@ -93,7 +93,7 @@ app.get('/api/v1/query', (req, res) => {
 });
 
 // Setup static and middleware
-app.use(express.static('./public'));
+app.use('/static-page',express.static('./public'));
 
 // app.all('*', (req, res) => {
 //   res.status(404).send('<h1>Resource not found</h1>');
