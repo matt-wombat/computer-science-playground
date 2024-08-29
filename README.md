@@ -6,25 +6,57 @@ This is my repository following the freeCodeCamp.org Node.js and Express.js YouT
 
 This repository contains two parts in the subfolders:
 
-* 1-node-tutorial - Node.js Basics
-* 2-express-tutorial - Express Basics
+- 1-node-tutorial - Node.js Basics
+- 2-express-tutorial - Express Basics
 
 # Prerequisites
 
-Nodemon package needs to be installed globally:
+Nodemon package needs to be installed globally to run `npm start` and restart automatically:
 
 `npm i -g nodemon`
 
-# Running and Restarting Automatically
+# Running Part 1: Node Tutorial Examples
 
-Go to either of the subfolders and run:
+Go to subdirectory:
+
+`cd 1-node-tutorial`
+
+In order to run app.js and restart automatically when it has changed, execute in terminal:
 
 `npm start`
 
+## Run examples separately in terminal:
 
-# Examples of Express Tutorial API URLs
+```
+node 01-hello-world.js
+node 02-globals+setInterval.js
+node 03-module.js
+node 07-module-implicit-invoke.js
+node 08-os-module.js
+node 09-path-module.js
+node 10-fs-module-read-write-sync.js
+node 11-fs-module-read-write-async.js
+node 12-http-module.js
+node 13-event-emitter.js
+node 14-http-server-request-event.js
+node 15-create-big-file.js
+node 16-stream.js
+node 17-http-stream.js
+```
 
-The following URLs should be available when running the express tutorial:
+# Running Part 2: Express Tutorial Examples
+
+Go to subdirectory:
+
+`cd 2-express-tutorial`
+
+In order to run app.js and restart automatically when it has changed, execute in terminal:
+
+`npm start`
+
+## View Express Tutorial Example API
+
+Open a browser and go to following URLs:
 
 http://localhost:5000/
 http://localhost:5000/about
