@@ -60,7 +60,7 @@ Open a browser and go to following URLs:
 
 http://localhost:5000/
 http://localhost:5000/about
-http://localhost:5000/index.html
+http://localhost:5000/static-page
 
 Authorization is required when accessing API URLs. API-Requests with user=john:
 

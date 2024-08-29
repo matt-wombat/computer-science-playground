@@ -21,4 +21,4 @@ sayHi(names.peter)
 
 console.log(data)
 
-require('./07-modules-without-variable')
+require('./07-module-implicit-invoke')
