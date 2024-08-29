@@ -75,4 +75,8 @@ Static example page with a FORM for POST method via Regular Form submit as well 
 http://localhost:5000/methods
 http://localhost:5000/login
 
+Following APIs handle POST and PUT requests (use i.e. Postman):
 
+http://localhost:5000/api/people
+http://localhost:5000/api/postman/people
+http://localhost:5000/api/people/1
