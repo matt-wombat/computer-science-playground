@@ -21,3 +21,19 @@ Go to either of the subfolders and run:
 
 `npm start`
 
+
+# Examples of Express Tutorial API URLs
+
+The following URLs should be available when running the express tutorial:
+
+http://localhost:5000/
+http://localhost:5000/about
+http://localhost:5000/index.html
+
+Authorization is required when accessing API URLs. API-Requests with user=john:
+
+http://localhost:5000/api/products?user=john
+http://localhost:5000/api/products/4?user=john
+http://localhost:5000/api/products/4/reviews/1?user=john
+http://localhost:5000/api/v1/query?search=a&limit=1&user=john
+http://localhost:5000/api/people

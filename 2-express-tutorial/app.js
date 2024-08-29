@@ -3,6 +3,7 @@ const app = express();
 
 const path = require('path');
 const { products } = require('./data.js');
+let { people } = require('./data.js');
 const { stringify } = require('querystring');
 
 // req => middleware => res
@@ -11,6 +12,10 @@ const { stringify } = require('querystring');
 const logger = require('./logger');
 const authorize = require('./authorize');
 const morgan = require('morgan');
+
+app.get('/api/people', (req, res) => {
+  res.status(200).json({ success: true, data: people })
+});
 
 // will be applied in every route:
 // app.use([logger, authorize]);
