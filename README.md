@@ -69,3 +69,10 @@ http://localhost:5000/api/products/4?user=john
 http://localhost:5000/api/products/4/reviews/1?user=john
 http://localhost:5000/api/v1/query?search=a&limit=1&user=john
 http://localhost:5000/api/people
+
+Static example page with a FORM for POST method via Regular Form submit as well as JavaScript based Submit and it's server based API URL:
+
+http://localhost:5000/methods
+http://localhost:5000/login
+
+

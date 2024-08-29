@@ -13,8 +13,38 @@ const logger = require('./logger');
 const authorize = require('./authorize');
 const morgan = require('morgan');
 
+// Setup static and middleware
+app.use('/methods', express.static('./methods-public'));
+
+// Parse form data and make it available in Express
+// This is only for FORM data, not for abitrary JSON Data
+app.use(express.urlencoded({ extended: false }));
+
+// To parse JSON (as opposed to FORM data in the section
+// above) the following enables access to JSON data in req.body
+app.use(express.json());
+
 app.get('/api/people', (req, res) => {
-  res.status(200).json({ success: true, data: people })
+  res.status(200).json({ success: true, data: people });
+});
+
+app.post('/api/people', (req, res) => {
+  const { name } = req.body;
+  if (!name) {
+    return res.status(400).json({ success: false, msg: 'Please provide name value' });
+  }
+  res.status(201).json({ success: true, person:name });
+});
+
+app.post('/login', (req, res) => {
+  console.log(req.body);
+  const { name } = req.body;
+
+  if (name) {
+    return res.status(200).send(`Welcome ${name}`);
+  }
+
+  res.status(401).send('Unauthorized - Please provide credentials.');
 });
 
 // will be applied in every route:
@@ -93,7 +123,7 @@ app.get('/api/v1/query', (req, res) => {
 });
 
 // Setup static and middleware
-app.use('/static-page',express.static('./public'));
+app.use('/static-page', express.static('./public'));
 
 // app.all('*', (req, res) => {
 //   res.status(404).send('<h1>Resource not found</h1>');
