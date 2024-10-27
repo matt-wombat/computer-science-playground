@@ -21,6 +21,7 @@ class LinkedList:
     return self.head_node
 
   def insert_beginning(self, new_value):
+    print(f'Inserting at beginning {new_value}')
     new_node = Node(new_value)
     new_node.set_next_node(self.head_node)
     self.head_node = new_node
@@ -46,6 +47,7 @@ class LinkedList:
     print("Linked list:", string, "(tail)")
 
   def remove_node(self, value_to_remove):
+    print(f'Removing {value_to_remove}')
     current_node = self.get_head_node()
     if current_node.get_value() == value_to_remove:
       self.head_node = current_node.get_next_node()
@@ -80,6 +82,15 @@ class LinkedList:
       node2_prev = node2
       node2 = node2.get_next_node()
 
+    # Check for edge cases
+    if (node1 is None or node2 is None):
+      print("Swap not possible - one or more element is not in the list")
+      return
+
+    if val1 == val2:
+      print("Elements are the same - no swap needed")
+      return
+
     # Change next node of previous node to the
     # new node, except previous node is None. 
     # In this case change list's head_node to the new node
@@ -98,29 +109,56 @@ class LinkedList:
     node1.set_next_node(node2.get_next_node())
     node2.set_next_node(temp)    
 
-    # Check for edge cases
-    if (node1 is None or node2 is None):
-      print("Swap not possible - one or more element is not in the list")
-      return
 
-    if val1 == val2:
-      print("Elements are the same - no swap needed")
-      return
+  def nth_last_node(self, n):
+    nth_pointer = None
+    tail_pointer = self.get_head_node()
+    count = 1
 
+    while tail_pointer:
+      tail_pointer = tail_pointer.get_next_node()
+      count += 1
 
-ll = LinkedList()
-ll.insert_beginning(100)
+      if count >= n + 1:
+        if nth_pointer == None:
+          nth_pointer = self.get_head_node()
+        else:
+          nth_pointer = nth_pointer.get_next_node()
+
+    print(f'{n} to last is {nth_pointer.get_value()}')
+  
+
+  def find_middle(linked_list):
+    fast_pointer = linked_list.head_node
+    slow_pointer = linked_list.head_node
+    while fast_pointer:
+      fast_pointer = fast_pointer.get_next_node()
+      if fast_pointer:
+        fast_pointer = fast_pointer.get_next_node()
+        slow_pointer = slow_pointer.get_next_node()
+
+    print(f'Middle (right-weighted) is {slow_pointer.get_value()}')
+
+ll = LinkedList(100)
 ll.insert_beginning(200)
 ll.insert_beginning(300)
 ll.insert_beginning("Wombat1")
 ll.insert_beginning("Wombat2")
 ll.insert_beginning("Wombat3")
+ll.insert_beginning("Wombat4")
 ll.print()
 
-ll.remove_node("Wombat3")
+ll.nth_last_node(1)
+ll.nth_last_node(4)
+ll.find_middle()
 ll.remove_node(300)
+ll.print()
+ll.find_middle()
+ll.remove_node("Wombat3")
 ll.print()
 
 ll.swap_nodes(100, 200)
 ll.swap_nodes("Wombat2", "Wombat1")
 ll.print()
+ll.nth_last_node(2)
+ll.find_middle()
