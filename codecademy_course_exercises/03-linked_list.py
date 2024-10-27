@@ -35,7 +35,7 @@ class LinkedList:
     return string_list
 
   def print(self):
-    string = "<head> "
+    string = "(head) "
     current_node = self.get_head_node()
     while current_node:
       if current_node.get_value():
@@ -43,7 +43,7 @@ class LinkedList:
           string += " -> "
         string += str(current_node.get_value())
       current_node = current_node.get_next_node()
-    print("Linked list:", string, "<tail>")
+    print("Linked list:", string, "(tail)")
 
   def remove_node(self, value_to_remove):
     current_node = self.get_head_node()
