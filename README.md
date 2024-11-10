@@ -1,12 +1,14 @@
-# Data Structures and Algorithms with Python or JavaScript
+# Computer Science Playground
 
-This repository contains my implementations of popular 
+This repository is my personal computer science playground.
+
+It contains my implementations of popular 
 
 * Data structures
 * Algorithms 
 * Problems
 
-Used programming languages:
+Programming languages used:
 
 * Python 
 * JavaScript / Node.js
