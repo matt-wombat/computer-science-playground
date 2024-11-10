@@ -1,0 +1,12 @@
+{
+  "name": "node-tutorial",
+  "version": "1.0.0",
+  "description": "Node.js Basics Tutorial App",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
