@@ -4,9 +4,9 @@ print("\nLet's play Towers of Hanoi!!")
 
 #Create the Stacks
 stacks = []
-left_stack = Stack("Left")
-middle_stack = Stack("Middle")
-right_stack = Stack("Right")
+left_stack = Stack("1st")
+middle_stack = Stack("2nd")
+right_stack = Stack("3rd")
 
 stacks.append(left_stack)
 stacks.append(middle_stack)
@@ -44,13 +44,37 @@ def get_input():
       if user_input == choices[i]:
         return stacks[i]
 
-
-
-
-
-
-
-
-
         
 #Play the Game
+num_user_moves = 0
+
+while right_stack.get_size() != num_disks:
+  while True:
+    print("\n\n\n...Current Stacks...")
+    for stack in stacks:
+      stack.print_items()
+  
+    print("\nWhich stack do you want to move from?\n")
+    from_stack = get_input()
+
+    print("\nWhich stack do you want to move to?\n")
+    to_stack = get_input()
+
+    if from_stack.is_empty():
+      print("\n\nInvalid Move. Try Again.")
+    elif (to_stack.is_empty()) or (from_stack.peek() < to_stack.peek()):
+      disk = from_stack.pop()
+      to_stack.push(disk)
+      num_user_moves += 1
+      break
+    else:
+      print("\n\nInvalid Move. Try Again.")
+
+
+print("\n\n\n...Current Stacks...")
+for stack in stacks:
+  stack.print_items()
+
+print("\n\nYou completed the game in {0} moves.\nThe optimal number of moves is {1}".format(num_user_moves, num_optimal_moves))
+
+
