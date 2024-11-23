@@ -19,12 +19,12 @@ function printresults(diagonale,breitenverh,hoehenverh) {
     newresults = calcwidthheight(diagonale, breitenverh, hoehenverh);
 
     resultstext =
-      "Diagonale: " + formatinch(diagonale) + '<br>\n' + 
-      "Breite/Höhe: " + breitenverh + ":" + hoehenverh + '<br><br>\n\n' + 
-      "Breite: " + formatinch(newresults.width) + '<br>\n' + 
-      "Höhe: " + formatinch(newresults.height);
+      "<tr><td>" + formatinch(diagonale) + "</td>\n" + 
+      "<td>" + breitenverh + ":" + hoehenverh + "</td>\n" + 
+      "<td>" + formatinch(newresults.width) + "</td>\n" + 
+      "<td>" + formatinch(newresults.height) + "</td></tr>\n";
 
     let ergebnisse = document.querySelector(".ergebnisse");
-    ergebnisse.innerHTML=resultstext;
+    ergebnisse.innerHTML=ergebnisse.innerHTML + resultstext;    
 }
 
