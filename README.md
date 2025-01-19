@@ -1,12 +1,10 @@
 # Computer Science Playground
 
-This repository is my personal computer science playground.
-
-It contains my implementations of popular 
+This repository is my personal computer science playground with my personal notes on popular topics like:
 
 * Data structures
 * Algorithms 
-* Problems
+* Computer Science Problems
 
 Programming languages used:
 
