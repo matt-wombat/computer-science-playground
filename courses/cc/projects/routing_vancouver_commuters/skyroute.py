@@ -2,6 +2,8 @@ from graph_search import bfs, dfs
 from vc_metro import vc_metro
 from vc_landmarks import vc_landmarks
 from landmark_choices import landmark_choices
+import networkx as nx
+import matplotlib.pyplot as plt
 
 # Build your program below:
 landmark_string = ''
@@ -18,6 +20,7 @@ def goodbye():
 
 def skyroute():
   greet()
+  vizualize_graph()
   new_route()
   goodbye()
 
@@ -112,7 +115,18 @@ def get_active_stations():
 
   return updated_metro
 
+def vizualize_graph():
+  G = nx.Graph(vc_metro)
+  pos =nx.spring_layout(G, seed = 50)
+  nx.draw(G, pos, with_labels = True, node_size = 2000)
+  plt.show()
+
+
 
 skyroute()
+
+
+
+
 
 
