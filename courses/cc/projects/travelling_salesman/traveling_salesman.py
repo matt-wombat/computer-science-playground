@@ -55,10 +55,9 @@ def traveling_salesman(graph):
   # Dictionary holding a status of all vertices and if there already been visited
   vertex_visited = {x: False for x in graph.graph_dict}
 
-  # Diese Implementierung noch checken ob graph.graph_dict.keys() das gleiche ausgibt, wie list(graph.graph_dict)
-  # current_vertex = random.choice(graph.graph_dict.keys())
   curr_vertex = random.choice(list(graph.graph_dict))
-  # curr_vertex = 'a'
+  print("Starting Vertex:", curr_vertex)
+  
   vertex_visited[curr_vertex] = True
   traveling_salesman_path += curr_vertex
 
@@ -73,6 +72,7 @@ def traveling_salesman(graph):
     curr_vertex_edge_weights = {}
     for edge in curr_vertex_edges:
       curr_vertex_edge_weights[edge] = graph.graph_dict[curr_vertex].get_edge_weight(edge)
+      print(edge, graph.graph_dict[curr_vertex].get_edge_weight(edge))
     
     next_found = False
     next_vertex = ''
@@ -85,6 +85,7 @@ def traveling_salesman(graph):
       # Select the minimum weight edge from the dictionary and check whether it points to a vertex that has already been visited or not. If unvisited, we have found our next_vertex. If visited, pop the edge from our dictionary and continue searching.
 
       next_vertex = min(curr_vertex_edge_weights, key=curr_vertex_edge_weights.get)
+      print("Next vertex:", next_vertex)
       if vertex_visited[next_vertex]:
         curr_vertex_edge_weights.pop(next_vertex)
       else:
@@ -103,7 +104,7 @@ def traveling_salesman(graph):
     # Check if all vertices were visited
     all_visited = all_vertices_visited(vertex_visited)
 
-  print(traveling_salesman_path)
+  print("Traveling Salesman Path:", traveling_salesman_path)
 
 
 graph = build_tsm_graph(False)
