@@ -1,5 +1,5 @@
 #
-# This script is designed to calculate MSCI regions for iShares ETFs for developed nations
+# This script is designed to calculate MSCI region fractions for iShares ETFs
 #
 
 import pandas as pd
@@ -15,14 +15,16 @@ def conv_str_to_float(val):
 
 def get_msci_region(val):
   match val:
-    case 'Belgien'|'Deutschland'|'Dänemark'|'Finnland'|'Frankreich'|'Irland'|'Israel'|'Italien'|'Niederlande'|'Norwegen'|'Portugal'|'Schweden'|'Schweiz'|'Spanien'|'Vereinigtes Königreich'|'Österreich':
-      return "EMEA"
-    case 'Griechenland'|'Kuwait'|'Polen'|'Qatar'|'Saudi-Arabien'|'Südafrika'|'Tschechien'|'Türkei'|'Ungarn'|'Ver. Arabische Emirate'|'Ägypten':
+    case 'Belgien'|'Deutschland'|'Dänemark'|'Finnland'|'Frankreich'|'Irland'|'Israel'|'Italien'|\
+         'Niederlande'|'Norwegen'|'Portugal'|'Schweden'|'Schweiz'|'Spanien'|'Vereinigtes Königreich'|\
+         'Österreich'|'Griechenland'|'Kuwait'|'Polen'|'Qatar'|'Saudi-Arabien'|'Südafrika'|\
+         'Tschechien'|'Türkei'|'Ungarn'|'Ver. Arabische Emirate'|'Ägypten':
       return "EMEA"
     case 'Vereinigte Staaten'|'Kanada'|'Brasilien'|'Chile'|'Kolumbien'|'Mexiko'|'Peru':
       return "Amerika"
-    case 'Japan'|'Australien'|'Hongkong'|'Neuseeland'|'Singapur'|'China'|'Indien'|'Indonesien'|'Korea'|'Malaysia'|'Philippinen'|'Taiwan'|'Thailand':
-      return "APAC"
+    case 'Japan'|'Australien'|'Hongkong'|'Neuseeland'|'Singapur'|'China'|'Indien'|'Indonesien'|\
+         'Korea'|'Malaysia'|'Philippinen'|'Taiwan'|'Thailand':
+      return "Asia-Pazifik"
     case _:
       return "Sonstige"
 
