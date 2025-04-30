@@ -2,9 +2,10 @@
 # Needed Modules:
 # pip install pandas numpy matplotlib cvxopt
 #
-# Portfolio 2 contains Delta, Jet Blue, Chevron, Exxon, Adobe, Honeywell
-# and as additional asset Nvidia. How does it change when compared to 
-# portfolio 1 without Nvidia?
+# Portfolio 3 contains Delta, Jet Blue, Chevron, Exxon, Adobe, Honeywell
+# and as additional assets Nvidia and Dexcom. How does it change when 
+# compared to portfolio 2 without Dexcom, which is not correlated with
+# the assets already in the portfolio?
 #
 
 import pandas as pd
@@ -14,6 +15,7 @@ import numpy as np
 
 #path='portfolio1.csv'
 path='portfolio1+nvidia.csv'
+path='portfolio1+nvidia+dexcom.csv'
 
 stock_data = pd.read_csv(path)
 selected=list(stock_data.columns[1:])
@@ -29,15 +31,24 @@ weights, returns, risks = optimal_portfolio(returns_quarterly[1:])
 df.plot.scatter(x='Volatility', y='Returns', fontsize=12)
 plt.plot(risks, returns, 'y-o')
 plt.scatter(single_asset_std,expected_returns,marker='X',color='red',s=200)
-for xc in single_asset_std:
-    plt.axvline(x=xc, color='red')
 
-if 'nvidia' in path:
+
+if 'dexcom' in path:
+  plt.axvline(single_asset_std[-1], color='black')
+  plt.scatter(single_asset_std[-1],expected_returns[-1],marker='X',color='black',s=200)
+  plt.scatter(single_asset_std[-2],expected_returns[-2],marker='X',color='green',s=200)
+  original_EF=pd.read_csv('./risks_returns_original.csv')
+  nvidia_EF=pd.read_csv('./risks_returns_nvidia.csv')
+  plt.plot(risks, returns, 'k-o')
+  plt.plot(original_EF['risks'],original_EF['returns'], 'y-o')
+  plt.plot(nvidia_EF['risks'],nvidia_EF['returns'], 'g-o')
+elif 'nvidia' in path:
   plt.axvline(single_asset_std[-1], color='green')
   plt.scatter(single_asset_std[-1],expected_returns[-1],marker='X',color='green',s=200)
-  original_EF=np.genfromtxt("risk_returns_nvidia.csv", delimiter=',')
+  original_EF=pd.read_csv('./risks_returns_original.csv')
   plt.plot(risks, returns, 'g-o')
-  plt.plot(original_EF[:,0],original_EF[:,1], 'y-o')
+  plt.plot(original_EF['risks'],original_EF['returns'], 'y-o')
+  
 plt.ylabel('Expected Returns',fontsize=14)
 plt.xlabel('Volatility (Std. Deviation)',fontsize=14)
 plt.title('Efficient Frontier', fontsize=24)

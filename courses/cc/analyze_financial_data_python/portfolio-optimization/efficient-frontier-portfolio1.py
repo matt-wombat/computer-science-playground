@@ -7,10 +7,10 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from mpttools import return_portfolios, optimal_portfolio
+from rf import return_portfolios, optimal_portfolio
 import numpy as np
 
-path='stock_prices_portfolio1.csv'
+path='portfolio1.csv'
 stock_data = pd.read_csv(path)
 selected=list(stock_data.columns[1:])
 
