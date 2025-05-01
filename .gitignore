@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 .git
+.venv
 *.pyc
 temp.txt
 apikey.js
