@@ -95,36 +95,33 @@ class BTree:
       child_node = self.find_correct_child_node(node, value)
     return self.search(value, child_node)
 
+if __name__ == '__main__':
+  btree = BTree(2)
+  btree.insert(2)
+  btree.insert(3)
+  btree.insert(4)
+  btree.insert(5)
+  btree.insert(6)
+  btree.insert(1)
+  btree.insert(7)
+  btree.insert(8)
+  btree.insert(9)
+  btree.insert(10)
+  btree.insert(11)
+  btree.insert(12)
+  btree.insert(13)
 
-btree = BTree(2)
-btree.insert(2)
-btree.insert(3)
-btree.insert(4)
-btree.insert(5)
-btree.insert(6)
-btree.insert(1)
-btree.insert(7)
-btree.insert(8)
-btree.insert(9)
-btree.insert(10)
-btree.insert(11)
-btree.insert(12)
-btree.insert(13)
+  print("Values in root node:", btree.root.keys)
+  print("    Root's child nodes:", btree.root.children)
 
-print("Values in root node:", btree.root.keys)
-print("    Root's child nodes:", btree.root.children)
+  for rootchild in btree.root.children:
+    print("    Root's child:", rootchild)
+    print("    Values in root's child:", rootchild.keys)
+    if rootchild.children:
+      print("    Child:", rootchild)
+      print("        Children to root's child:", rootchild.children)
+      for childschild in rootchild.children:
+        print("        Values in root's child node:", childschild.keys)
 
-for rootchild in btree.root.children:
-  print("    Root's child:", rootchild)
-  print("    Values in root's child:", rootchild.keys)
-  if rootchild.children:
-    print("    Child:", rootchild)
-    print("        Children to root's child:", rootchild.children)
-    for childschild in rootchild.children:
-      print("        Values in root's child node:", childschild.keys)
-
-
-
-
-target_value = 10
-print("Target value", target_value, "exists:", btree.search(target_value))
+  target_value = 10
+  print("Target value", target_value, "exists:", btree.search(target_value))

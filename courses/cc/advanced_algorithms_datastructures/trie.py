@@ -38,21 +38,21 @@ class TrieNode:
       self.nodes[c] = TrieNode()
     return self.nodes[c]
 
+if __name__ == '__main__':
+  trie = Trie()
+  new_words = ["AMBER", "ALICE", "AMPLE", "BALLOON", "BALL", "BLAST", "BAND", "DENSE", "DUTCH", "DECK", "DANCE", "DRAMA", "MESS", "MAVERICK", "MAVEN", "PHYSICS", "PHONE", "PHANTOM", "PASS", "PEAK", "PACK", "ZEST", "ZEAL", "ZAP", "ZIP", "ZIPPER"]
+  for word in new_words:
+    trie.add_string(word)
 
-trie = Trie()
-new_words = ["AMBER", "ALICE", "AMPLE", "BALLOON", "BALL", "BLAST", "BAND", "DENSE", "DUTCH", "DECK", "DANCE", "DRAMA", "MESS", "MAVERICK", "MAVEN", "PHYSICS", "PHONE", "PHANTOM", "PASS", "PEAK", "PACK", "ZEST", "ZEAL", "ZAP", "ZIP", "ZIPPER"]
-for word in new_words:
-  trie.add_string(word)
+  find_words = ["APPLE", "AMPLIFIER", "AMPLE", "BALLOON", "BALL", "DART", "DUTCH", "DECK", "DRAM", "FLAG", "MOP", "MAVERICK", "MANSION", "PHYSICS", "PHONE", "PHANTOM", "PASS", "PECK", "PAIN", "ZAM", "ZEST", "ZAP", "ZIP", "ZEBRA"]
+  print("Found Words:")
+  for word in find_words:
+    if trie.search_string(word):
+      print(word)
 
-find_words = ["APPLE", "AMPLIFIER", "AMPLE", "BALLOON", "BALL", "DART", "DUTCH", "DECK", "DRAM", "FLAG", "MOP", "MAVERICK", "MANSION", "PHYSICS", "PHONE", "PHANTOM", "PASS", "PECK", "PAIN", "ZAM", "ZEST", "ZAP", "ZIP", "ZEBRA"]
-print("Found Words:")
-for word in find_words:
-  if trie.search_string(word):
-    print(word)
-
-prefix = ["A", "AM", "B", "BALL", "BA", "C", "CA" "DUTCH", "DECK", "GA", "J", "MA", "P", "PH", "PE", "Z", "ZIP"]
-print("Prefix used numer of times:")
-for word in prefix:
-  print(word, ':', trie.count_prefix(word))
+  prefix = ["A", "AM", "B", "BALL", "BA", "C", "CA" "DUTCH", "DECK", "GA", "J", "MA", "P", "PH", "PE", "Z", "ZIP"]
+  print("Prefix used numer of times:")
+  for word in prefix:
+    print(word, ':', trie.count_prefix(word))
 
 

@@ -73,25 +73,26 @@ class Hamiltonian:
         self.path.pop()
 
 
-vertices = ['School', 'Sanjay', 'Marquis', 'Marisol', 'Lisa']
-adjacency_matrix = [
-                    [0, 1, 0, 0, 1],
-                    [1, 0, 1, 0, 0],
-                    [0, 1, 0, 1, 0],
-                    [0, 0, 1, 0, 1],
-                    [1, 0, 0, 1, 0]
-                  ]
-adjacency_matrix2 = [
-                    [0, 1, 1, 0, 0], 
-                    [1, 0, 1, 0, 0], 
-                    [1, 1, 0, 1, 0], 
-                    [0, 0, 1, 0, 1], 
-                    [0, 0, 0, 1, 0]  
-                  ]
+if __name__ == '__main__':
+  vertices = ['School', 'Sanjay', 'Marquis', 'Marisol', 'Lisa']
+  adjacency_matrix = [
+                      [0, 1, 0, 0, 1],
+                      [1, 0, 1, 0, 0],
+                      [0, 1, 0, 1, 0],
+                      [0, 0, 1, 0, 1],
+                      [1, 0, 0, 1, 0]
+                    ]
+  # adjacency_matrix2 = [
+  #                     [0, 1, 1, 0, 0], 
+  #                     [1, 0, 1, 0, 0], 
+  #                     [1, 1, 0, 1, 0], 
+  #                     [0, 0, 1, 0, 1], 
+  #                     [0, 0, 0, 1, 0]  
+  #                   ]
 
-#ham = Hamiltonian(vertices, adjacency_matrix, 0)
-ham = Hamiltonian(vertices, adjacency_matrix2, 0)
+  hamilton = Hamiltonian(vertices, adjacency_matrix, 0)
+  #hamilton = Hamiltonian(vertices, adjacency_matrix2, 0)
 
-ham.traverse()
-print("Hamiltonian paths:" + str(ham.hpaths))
-print("Hamiltonian cycles:" + str(ham.cycles))
+  hamilton.traverse()
+  print("Hamiltonian paths:" + str(hamilton.hpaths))
+  print("Hamiltonian cycles:" + str(hamilton.cycles))
