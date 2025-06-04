@@ -32,25 +32,6 @@ def possible(y, x, n):
   
   return True
 
-counter = 0
-grid = [
-  [5,3,0,0,7,0,0,0,0],
-  [6,0,0,1,9,5,0,0,0],
-  [0,9,8,0,0,0,0,6,0],
-  [8,0,0,0,6,0,0,0,3],
-  [4,0,0,8,0,3,0,0,1],
-  [7,0,0,0,2,0,0,0,6],
-  [0,6,0,0,0,0,2,8,0],
-  [0,0,0,4,1,9,0,0,5],
-  [0,0,0,0,8,0,0,7,9]
-  ]
-
-print("Input:")
-print(np.matrix(grid))
-
-print("Solutions:")
-
-
 def solve():
   global grid, counter
 
@@ -68,4 +49,21 @@ def solve():
   print(np.matrix(grid))
   print("Number of attempts: ", counter)
 
+counter = 0
+grid = [
+  [5,3,0,0,7,0,0,0,0],
+  [6,0,0,1,9,5,0,0,0],
+  [0,9,8,0,0,0,0,6,0],
+  [8,0,0,0,6,0,0,0,3],
+  [4,0,0,8,0,3,0,0,1],
+  [7,0,0,0,2,0,0,0,6],
+  [0,6,0,0,0,0,2,8,0],
+  [0,0,0,4,1,9,0,0,5],
+  [0,0,0,0,8,0,0,7,9]
+  ]
+
+print("Input:")
+print(np.matrix(grid))
+
+print("Solutions:")
 solve()
