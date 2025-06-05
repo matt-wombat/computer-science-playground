@@ -55,8 +55,9 @@ def is_palindrome(candidate):
 if __name__ == '__main__':
   print("Is palindrome:", is_palindrome('Hello World'))
   print("Is palindrome:", is_palindrome('Level'))
-  print("Is palindrome:", is_palindrome('Kayak'))
+  print("Is palindrome:", is_palindrome('Racecar'))
   print("Is palindrome:", is_palindrome('A Toyota'))
-  print("Is palindrome:", is_palindrome('A man, a plan, a canal-Panama'))
+  print("Is palindrome:", is_palindrome('Step on no Pets'))
   print("Is palindrome:", is_palindrome('Do geese see God?'))
+  print("Is palindrome:", is_palindrome('A man, a plan, a canal-Panama'))
   print("Is palindrome:", is_palindrome('Ah, Satan sees Natasha'))
