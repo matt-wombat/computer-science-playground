@@ -1,6 +1,8 @@
 #
 # This script is designed to calculate MSCI region fractions for iShares ETFs
 #
+# Autor (Urheberrecht / Copyright): Matthäus Otremba, 2026
+#
 
 import pandas as pd
 import sys
